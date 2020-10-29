@@ -1,0 +1,28 @@
+{
+  "name": "greenlight",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.18.3"
+  },
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwhitney85/greenlight.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwhitney85/greenlight/issues"
+  },
+  "homepage": "https://github.com/cwhitney85/greenlight#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.11"
+  }
+}
