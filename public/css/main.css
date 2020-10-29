@@ -1,4 +1,13 @@
 body {
   color: green;
   
+
+}
+
+.hero {
+  background-image: url("https://s3.envato.com/files/121890818/Traffic%20Light%20(green%20to%20red)-%20preview.jpg");
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
