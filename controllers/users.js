@@ -7,7 +7,10 @@ users.get('/new', (req, res) => {
 })
 
 users.post('/', (req, res) => {
-  res.send(req.body)
+  User.create(req.body, (err, user) => {
+    console.log('user is created', user)
+    res.redirect('/')
+  })
 });
 
 module.exports = users;
