@@ -6,4 +6,8 @@ users.get('/new', (req, res) => {
   res.render('./users/new.ejs');
 })
 
+users.post('/', (req, res) => {
+  res.send(req.body)
+});
+
 module.exports = users;
