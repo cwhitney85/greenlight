@@ -64,6 +64,8 @@ app.get('/' , (req, res) => {
 // Controllers
 const usersController = require('./controllers/users.js');
 app.use('/users', usersController);
+const membersController = require('./controllers/members.js');
+app.use('/members', membersController);
 
 //___________________
 //Listener
