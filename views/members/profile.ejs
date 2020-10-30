@@ -7,7 +7,24 @@
 <body>
   <%- include ('../partials/nav.ejs')  %> 
   <div class="container">
-    <h1>This is my profile page</h1>
+    <div class="jumbotron">
+      <h1 class="display-4"><%= member.firstname  %>  <% member.lastname %> </h1>
+      <img src="<%= member.picture %>" alt="">
+      <p class="lead"><%= member.aboutMe  %> </p>
+      <hr class="my-4">
+      <p>Location: <%= member.location %> </p> <br>
+      <p>Age: <%= member.age %> </p> <br>
+      <p>Occupation: <%= member.occupation %> </p> <br>
+      <p>School: <%= member.school %> </p> <br>
+      <p>Drink of Choice: <%= member.drink %> </p> <br>
+      <p>Best Line: <%= member.pickup %> </p> <br>
+      <ul>
+        <% for( let i = 0; i < member.interests.length; i++) { %>
+          <li><%= member.interests[i] %> </li>
+        <% } %>
+      </ul>
+    </div>
+
   </div>
 
   <%- include ('../partials/footer.ejs')  %> 

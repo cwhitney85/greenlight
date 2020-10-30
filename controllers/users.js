@@ -10,7 +10,7 @@ users.get('/new', (req, res) => {
 users.post('/', (req, res) => {
   User.create(req.body, (err, user) => {
     console.log('user is created', user)
-    res.redirect('/')
+    res.redirect('/members/new')
   })
 });
 
