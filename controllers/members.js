@@ -3,7 +3,7 @@ const members = express.Router();
 const Member = require('../models/members.js');
 
 members.get('/new', (req, res) => {
-  res.send('new members set up their profile here')
+  res.render('./members/new.ejs')
 });
 
 
