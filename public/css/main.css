@@ -34,6 +34,23 @@ body {
   color: white;
 }
 
+.biz-prop {
+  margin-top: 30px;
+}
+
+.biz-prop-text {
+  text-align: center;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 30px;
+}
+
+.biz-card img {
+  height: 60%;
+}
+
 
 
 
