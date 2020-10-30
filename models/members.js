@@ -9,6 +9,8 @@ const memberSchema = Schema({
   school: String,
   age: Number,
   location: String,
+  drink: String,
+  pickup: String,
   interests: [String],
   aboutMe: String,
   isGreen: { type: Boolean, required: true }
