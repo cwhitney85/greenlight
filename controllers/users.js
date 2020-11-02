@@ -9,13 +9,10 @@ users.get('/new', (req, res) => {
 
 users.post('/', (req, res) => {
   User.create(req.body, (err, user) => {
-    if (err) {
-      console.log(err)
-    } else {
       res.redirect('/members/new')
-    }
   })
 });
 
 module.exports = users;
 
+// content.js:1 Uncaught (in promise) Error: Something went wrong. Please check back shortly.     at g (content.js:1)

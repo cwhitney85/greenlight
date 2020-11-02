@@ -7,6 +7,7 @@ const mongoose = require ('mongoose');
 const session = require('express-session');
 const app = express();
 const db = mongoose.connection;
+mongoose.Promise = global.Promise;
 //___________________
 //Port
 //___________________
