@@ -7,18 +7,20 @@ const mongoose = require ('mongoose');
 const session = require('express-session');
 const app = express();
 const db = mongoose.connection;
-mongoose.Promise = global.Promise;
+require('dotenv').config();
 //___________________
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT
+// 3000;
 
 //___________________
 //Database
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ `greenlight`;
+const MONGODB_URI = process.env.MONGODB_URI
+// 'mongodb://localhost:27017/'+ `greenlight`;
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
