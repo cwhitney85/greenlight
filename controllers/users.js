@@ -3,11 +3,11 @@ const users = express.Router();
 const User = require('../models/users.js');
 
 
-users.get('/new', (req, res) => {
+users.get('/users/new', (req, res) => {
   res.render('./users/new.ejs');
 })
 
-users.post('/', (req, res) => {
+users.post('/users', (req, res) => {
   User.create(req.body, (err, user) => {
     res.redirect('/members/new')
   })
