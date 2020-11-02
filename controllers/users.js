@@ -7,9 +7,13 @@ users.get('/users/new', (req, res) => {
   res.render('./users/new.ejs');
 })
 
-users.post('/users', (req, res) => {
+users.post('/', (req, res) => {
   User.create(req.body, (err, user) => {
-    res.redirect('/members/new')
+    if (err) {
+      console.log(err)
+    } else {
+      res.redirect('/members/new')
+    }
   })
 });
 
