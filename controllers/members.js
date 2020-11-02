@@ -6,12 +6,15 @@ members.get('/:id/profile', (req, res) => {
   Member.findById(req.params.id, (err, member) => {
     res.render('./members/profile.ejs', {
       member: member,
+      currentUser: req.session.currentUser
     })
   })
 });
 
 members.get('/new', (req, res) => {
-  res.render('./members/new.ejs')
+  res.render('./members/new.ejs', {
+    currentUser: req.session.currentUser
+  })
 });
 
 members.post('/', (req, res) => {

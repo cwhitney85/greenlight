@@ -63,7 +63,9 @@ app.use(
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.render('index.ejs')
+  res.render('index.ejs', {
+    currentUser: req.session.currentUser
+  })
 });
 
 // Controllers

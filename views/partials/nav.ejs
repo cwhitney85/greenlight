@@ -5,6 +5,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+      <% if (currentUser) { %>
+      <form action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Logt Out" class="btn-small btn-success">
+      </form>
+      <% } else { %>
       <a class="nav-link dropdown-toggle" href="#" id="#navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Sign Up
       </a>
@@ -13,6 +18,7 @@
         <a class="dropdown-item" href="#">For Businesses</a>
       </div>
       <a class="nav-item nav-link" href="/sessions/new">Log In</a>
+    <% } %>
     </div>
   </div>
 </nav>
