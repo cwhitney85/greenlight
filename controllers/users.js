@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const express = require('express');
 const users = express.Router();
 const User = require('../models/users.js');
@@ -9,7 +10,7 @@ users.get('/new', (req, res) => {
 
 users.post('/', (req, res) => {
   User.create(req.body, (err, user) => {
-    return res.redirect('/members/new')
+    res.redirect('/members/new')
   })
 });
 
