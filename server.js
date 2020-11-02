@@ -50,11 +50,13 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // use express sessions
 app.use(
   session({
-    secret: process.env.SECRET || 'MoreCowbell',
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false
   })
 );
+
+//MoreCowbell
 
 //___________________
 // Routes
@@ -69,6 +71,8 @@ const usersController = require('./controllers/users.js');
 app.use('/users', usersController);
 const membersController = require('./controllers/members.js');
 app.use('/members', membersController);
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 
 //___________________
 //Listener
