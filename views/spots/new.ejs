@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include ('../partials/head.ejs')  %> 
+</head>
+<body>
+  <%- include ('../partials/nav.ejs')  %> 
+  <div class="container">
+    <h1>Turn your light on and get singles to your spot!</h1>
+    <div class="row">
+      <form class="col-8" action="/spots" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" aria-describedby="firstNameHelp" placeholder="Paddy's Pub" name="name">
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" id="location" placeholder="Where's the party tonight?" name="location">
+        </div>
+        <div class="form-group">
+          <label for="picture">Picture</label>
+          <input type="text" class="form-control" id="picture" placeholder="URL" name="picture">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input type="text" class="form-control" id="category" placeholder="Y'all serve alcohol here?" name="category">
+        </div>
+        <div class="form-group">
+          <label for="capacity">Capacity</label>
+          <input type="number" class="form-control" id="capacity" placeholder="It's looking pretty crowded" name="capcity">
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact</label>
+          <input type="text" class="form-control" id="contact" placeholder="Who runs this establishment?" name="contact">
+        </div>
+        <label for="is21Plus">Is this spot 21+?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="is21Plus" id="yes21" value="yes">
+          <label class="form-check-label" for="yes21">Yes</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="is21plus" id="no21" value="no">
+          <label class="form-check-label" for="no21">No</label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+  <%- include ('../partials/footer.ejs')  %> 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

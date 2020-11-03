@@ -4,9 +4,11 @@ const Schema = mongoose.Schema;
 const spotSchema = Schema({
   name: { type: String, required: true },
   location: { type: String, required: true },
+  picture: String,
   category: String,
   is21Plus: Boolean,
-  capacity: Number
+  capacity: Number,
+  contact: { type: String, required: true }
 });
 
 const Spot = mongoose.model('Spot', spotSchema);
