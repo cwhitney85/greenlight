@@ -75,6 +75,8 @@ const membersController = require('./controllers/members.js');
 app.use('/members', membersController);
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
+const spotsController = require('./controllers/spots.js');
+app.use('/spots', spotsController);
 
 //___________________
 //Listener
