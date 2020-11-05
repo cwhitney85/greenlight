@@ -9,5 +9,9 @@ spots.get('/new', (req, res) => {
   })
 });
 
+spots.post('/', (req, res) => {
+  res.send(req.body)
+});
+
 
 module.exports = spots;
