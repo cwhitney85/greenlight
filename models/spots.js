@@ -6,8 +6,10 @@ const spotSchema = Schema({
   location: { type: String, required: true },
   picture: String,
   category: String,
+  description: String,
   is21Plus: Boolean,
   capacity: Number,
+  deals: [String],
   contact: { type: String, required: true }
 });
 
