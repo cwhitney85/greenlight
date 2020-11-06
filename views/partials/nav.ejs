@@ -6,8 +6,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
       <% if (currentUser) { %>
+      <a class="nav-item nav-link" href="#">Hi Colin!</a>
       <form action="/sessions?_method=DELETE" method="POST">
-        <input type="submit" value="Logt Out" class="btn-small btn-success">
+        <input type="submit" value="Log Out" class="btn-small btn-success">
       </form>
       <% } else { %>
       <a class="nav-link dropdown-toggle" href="#" id="#navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
