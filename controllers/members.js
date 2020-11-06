@@ -68,6 +68,15 @@ members.delete('/:username/profile', isAuthenticated, (req, res) => {
   })
 });
 
+members.get('/:username', (req, res) => {
+  Member.findOne({username: req.params.username}, (err, member) => {
+    res.render('./members/show.ejs', {
+      member: member,
+      currentUser: req.session.currentUser
+    })
+  })
+});
+
 
 
 

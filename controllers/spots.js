@@ -10,6 +10,15 @@ const isAuthenticated = (req, res, next) => {
   }
 };
 
+spots.get('/:name/profile', (req, res) => {
+  Spot.findOne({ name: req.params.name }, (err, spot) => {
+    res.render('./spots/profile.ejs', {
+      spot: spot,
+      currentUser: req.session.currentUser
+    })
+  })
+});
+
 spots.get('/new', (req, res) => {
   res.render('./spots/new.ejs', {
     currentUser: req.session.currentUser
@@ -25,8 +34,6 @@ spots.get('/:name/edit', (req, res) => {
   })
 });
 
-
-
 spots.post('/', (req, res) => {
   req.body.deals = req.body.deals.split(',');
   if (req.body.is21Plus === "yes") {
@@ -36,7 +43,7 @@ spots.post('/', (req, res) => {
   }
   Spot.create(req.body, (err, spot) => {
     console.log(spot)
-    res.redirect('/spots/' + spot.name)
+    res.redirect('/spots/' + spot.name + '/profile')
   })
 });
 
@@ -54,19 +61,21 @@ spots.put('/:name', isAuthenticated, (req, res) => {
   })
 });
 
-spots.get('/:name', (req, res) => {
-  Spot.findOne({ name: req.params.name }, (err, spot) => {
-    res.render('./spots/profile.ejs', {
-      spot: spot,
-      currentUser: req.session.currentUser,
-    })
-  })
-});
 
 spots.delete('/:name', (req, res) => {
   Spot.findOneAndRemove({name: req.params.name}, (err, member) => {
     res.redirect('/')
   })
 });
+
+spots.get('/:name', (req, res) => {
+  Spot.findOne({name: req.params.name}, (err, spot) => {
+    res.render('./spots/show.ejs', {
+      spot: spot,
+      currentUser: req.session.currentUser
+    })
+  })
+});
+
 
 module.exports = spots;
