@@ -20,7 +20,3 @@ users.post('/', (req, res) => {
 
 module.exports = users;
 
-// content.js:1 Uncaught (in promise) Error: Something went wrong. Please check back shortly.     at g (content.js:1)
-
-// g = ({reject: a, resolve: n},r)=>{
-  // e.runtime.lastError ? e.runtime.lastError.message === t ? n() : a(e.runtime.lastError) : r && r.

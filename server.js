@@ -13,14 +13,14 @@ require('dotenv').config();
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT
-// 3000;
+
 
 //___________________
 //Database
 //___________________
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI
-// 'mongodb://localhost:27017/'+ `greenlight`;
+
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
@@ -56,12 +56,11 @@ app.use(
   })
 );
 
-//MoreCowbell
 
 //___________________
 // Routes
 //___________________
-//localhost:3000
+
 app.get('/' , (req, res) => {
   res.render('index.ejs', {
     currentUser: req.session.currentUser

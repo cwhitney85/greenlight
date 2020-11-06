@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const express = require('express');
 const members = express.Router();
 const Member = require('../models/members.js');
@@ -55,10 +56,18 @@ members.put('/:username/profile', isAuthenticated, (req, res) => {
   } else {
     req.body.isGreen = false;
   }
-  Member.findOneAndUpdate({ username: req.params.username }, req.body, { new: true }, (err, member) => {
-    res.redirect('/members/' + member.username + '/profile')
+  Member.findOneAndUpdate({ username: req.params.username }, req.body, { new: true }, (err, updatedMember) => {
+    console.log(updatedMember)
+    res.redirect('/members/' + updatedMember.username + '/profile')
   })
 });
+
+members.delete('/:username/profile', isAuthenticated, (req, res) => {
+  Member.findByIdAndRemove(req.params.username, (err, member) => {
+    res.redirect('/')
+  })
+});
+
 
 
 
