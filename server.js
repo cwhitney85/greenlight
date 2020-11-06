@@ -67,6 +67,12 @@ app.get('/' , (req, res) => {
   })
 });
 
+app.get('/browse', (req, res) => {
+  res.render('spots.ejs', {
+    currentUser: req.session.currentUser
+  })
+});
+
 // Controllers
 const usersController = require('./controllers/users.js');
 app.use('/users', usersController);
