@@ -10,6 +10,15 @@ spots.get('/new', (req, res) => {
   })
 });
 
+spots.get('/:name/edit', (req, res) => {
+  Spot.findOne( { name: req.params.name }, (err, spot) => {
+    res.render('./spots/edit.ejs', {
+      spot: spot,
+      currentUser: req.session.currentUser
+    })
+  })
+});
+
 spots.get('/:name', (req, res) => {
   Spot.findOne({ name: req.params.name }, (err, spot) => {
     res.render('./spots/profile.ejs', {

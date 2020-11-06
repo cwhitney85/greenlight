@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include ('../partials/head.ejs')  %> 
+</head>
+<body>
+  <%- include ('../partials/nav.ejs')  %> 
+  <div class="container">
+    <h1>Edit Your Spot</h1>
+    <div class="row">
+      <form class="col-8" action="/spots?method=PUT" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" aria-describedby="firstNameHelp" value="<%= spot.name%>" name="name">
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" id="location" value="<%= spot.location%>" name="location">
+        </div>
+        <div class="form-group">
+          <label for="picture">Picture</label>
+          <input type="text" class="form-control" id="picture" value="<%= spot.picture%>" name="picture">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input type="text" class="form-control" id="category" value="<%= spot.category%>" name="category">
+        </div>
+        <div class="form-group">
+          <label for="capacity">Capacity</label>
+          <input type="number" class="form-control" id="capacity" value="<%=spot.capacity%>" name="capcity">
+        </div>
+        <div class="form-group">
+          <label for="deals">Deals</label>
+          <input type="text" class="form-control" id="deals" placeholder="It's happy hour!?" name="deals">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact</label>
+          <input type="text" class="form-control" id="contact" value="<%=spot.contact%>" name="contact">
+        </div>
+        <label for="is21Plus">Is this spot 21+?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="is21Plus" id="yes21" value="yes">
+          <label class="form-check-label" for="yes21">Yes</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="is21plus" id="no21" value="no">
+          <label class="form-check-label" for="no21">No</label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+  <%- include ('../partials/footer.ejs')  %> 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

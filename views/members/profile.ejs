@@ -24,7 +24,7 @@
           <li><%= member.interests[i] %> </li>
         <% } %>
       </ul>
-      <a class="btn-small btn-success" href="/members/<%= member.username %>/edit">Edit</a>
+      <a class="btn-md btn-success" href="/members/<%= member.username %>/edit">Edit</a>
       <form action="/members/<%= member.username %>/profile?_method=DELETE" method="POST">
         <input class="btn-md btn-success" type="submit" value="Delete Profile">
       </form>
