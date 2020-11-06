@@ -21,8 +21,10 @@
       </ul>
       <p>Contact: <%= spot.contact %> </p> <br>
       <a class="btn-md btn-success" href="/spots/<%= spot.name %>/edit">Edit</a>
+      <form action="/spots/<%= spot.name %>?_method=DELETE" method="POST">
+        <input class="btn-md btn-success" type="submit" value="Delete Spot">
+      </form>
     </div>
-
   </div>
 
   <%- include ('../partials/footer.ejs')  %> 

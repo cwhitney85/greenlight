@@ -63,7 +63,7 @@ members.put('/:username/profile', isAuthenticated, (req, res) => {
 });
 
 members.delete('/:username/profile', isAuthenticated, (req, res) => {
-  Member.findByIdAndRemove(req.params.username, (err, member) => {
+  Member.findOneAndRemove({username: req.params.username}, (err, member) => {
     res.redirect('/')
   })
 });

@@ -63,4 +63,10 @@ spots.get('/:name', (req, res) => {
   })
 });
 
+spots.delete('/:name', (req, res) => {
+  Spot.findOneAndRemove({name: req.params.name}, (err, member) => {
+    res.redirect('/')
+  })
+});
+
 module.exports = spots;
