@@ -1,9 +1,10 @@
 const express = require('express');
 const members = express.Router();
 const Member = require('../models/members.js');
+const sessions = require('./sessions.js');
 
-members.get('/:id/profile', (req, res) => {
-  Member.findById(req.params.id, (err, member) => {
+members.get('/:username/profile', (req, res) => {
+  Member.findOne({ username: req.params.username }, (err, member) => {
     res.render('./members/profile.ejs', {
       member: member,
       currentUser: req.session.currentUser
@@ -26,7 +27,8 @@ members.post('/', (req, res) => {
   }
   Member.create(req.body, (err, member) => {
     console.log('member is created', member)
-    res.redirect('/members/' + member.id + '/profile')
+    // res.redirect('/members/' + member.username + '/profile')
+    res.redirect('/sessions/new')
   })
 });
 

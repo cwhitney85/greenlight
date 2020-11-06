@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
       <% if (currentUser) { %>
-      <a class="nav-item nav-link" href="#">Hi Colin!</a>
+      <a class="nav-item nav-link" href="/members/<%= currentUser.username  %>/profile" >Hi <%= currentUser.username  %> !</a>
       <form action="/sessions?_method=DELETE" method="POST">
         <input type="submit" value="Log Out" class="btn-small btn-success">
       </form>
