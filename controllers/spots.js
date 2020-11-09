@@ -19,6 +19,16 @@ spots.get('/:name/profile', (req, res) => {
   })
 });
 
+spots.get('/browse', (req, res) => {
+  res.render('./spots/browse.ejs')
+});
+
+// app.get('/browse', (req, res) => {
+//   res.render('spots.ejs', {
+//     currentUser: req.session.currentUser
+//   })
+// });
+
 spots.get('/new', (req, res) => {
   res.render('./spots/new.ejs', {
     currentUser: req.session.currentUser
